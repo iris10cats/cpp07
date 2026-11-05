@@ -1,5 +1,4 @@
-#ifndef ARRAY_HPP
-#define ARRAY_HPP
+#pragma once
 
 #include <exception>
 
@@ -27,4 +26,3 @@ public:
 
 #include "Array.tpp"
 
-#endif

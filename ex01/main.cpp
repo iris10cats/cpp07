@@ -2,14 +2,9 @@
 #include <string>
 #include "iter.hpp"
 
-template <typename T>
-void printElement(const T &element ) {
-    std::cout<<element;
-}
 
-void incrementElement(int &element) {
-    ++element;
-}
+
+
 
 int main(void) {
     int num[] = {0,1,2,3,4};
@@ -17,7 +12,7 @@ int main(void) {
 
     iter(num, numLength, printElement<int>);
     std::cout << std::endl;
-    iter (num, numLength, incrementElement);
+    iter (num, numLength, incrementElement<int>);
 
     iter(num, numLength, printElement<int>);
 
@@ -35,7 +30,10 @@ int main(void) {
     iter(list, listLen, printElement<std::string>);
     std::cout << std::endl;
 
-    
+    std::string list_[] = {"a", "b", "cccc"};
+    const unsigned int list_Len = sizeof(list_) / sizeof(list_[1]);
+    iter(list_, list_Len, printElement<std::string>);
+    std::cout << std::endl;
     
 
      /*const int readonlyNums[] = {10, 20, 30};
